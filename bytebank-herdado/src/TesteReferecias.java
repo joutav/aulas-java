@@ -17,8 +17,7 @@ public class TesteReferecias {
 		System.out.println(g1.getBonificacao());
 		
 		
-		Funcionario f = new Funcionario();
-		f.setSalario(2000.00);
+
 		
 		EditorVideo ev = new EditorVideo();
 		ev.setSalario(2500.00);
@@ -27,7 +26,6 @@ public class TesteReferecias {
 		
 		ControleBonificacao controle = new ControleBonificacao();
 		controle.registra(g1);
-		controle.registra(f);
 		controle.registra(ev);
 		
 		System.out.println(controle.getSoma());
