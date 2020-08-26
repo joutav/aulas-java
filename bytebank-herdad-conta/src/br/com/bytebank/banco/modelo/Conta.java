@@ -1,13 +1,15 @@
 package br.com.bytebank.banco.modelo;
 
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Classe que represtenta uma moldura de uma conta.
  * @author jvmga
  *
  */
 
-public abstract class Conta {
+public abstract class Conta implements Comparable<Conta>{
     protected double saldo;
     private int agencia;
     private int numero;
@@ -15,7 +17,7 @@ public abstract class Conta {
     private static int total;
     
     /**
-     * Construtor para iniciar uma conta a partir da agência e numero.
+     * Construtor para iniciar uma conta a partir da agï¿½ncia e numero.
      * @param agencia
      * @param numero
      */
@@ -89,11 +91,29 @@ public abstract class Conta {
     public static int getTotal() {
 		return total;
 	}
-    
+
+	@Override
+	public  boolean equals(Object ref){
+    	Conta c = (Conta) ref;
+    	if(this.agencia != c.agencia || this.numero != c.numero) return false;
+    	return true;
+	}
+
+
+	@Override
+	public int compareTo(@NotNull Conta outra) {
+    	return Double.compare(this.saldo, outra.saldo);
+	}
+
 	@Override
 	public String toString() {
-		return "Numero: " + this.numero + ", Agencia: " + this.agencia;
+		return "Numero: " + this.numero + ", Agencia: " + this.agencia + ", Saldo: "
+				+ this.saldo;
 	}
-    
+
+
+
+
+
     
 }
