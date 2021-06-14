@@ -1,4 +1,7 @@
 package br.com.bytebank.banco.modelo;
+
+import java.io.Serializable;
+
 /**
  * Classe que represta um cliente.
  * @author jvmga
@@ -8,7 +11,7 @@ package br.com.bytebank.banco.modelo;
 
 
 
-public class Cliente {
+public class Cliente implements Serializable {
 	private String nome;
 	private String cpf;
 	private String profissao;

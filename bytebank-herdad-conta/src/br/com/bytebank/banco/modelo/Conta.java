@@ -3,13 +3,15 @@ package br.com.bytebank.banco.modelo;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.io.Serializable;
+
 /**
  * Classe que represtenta uma moldura de uma conta.
  * @author jvmga
  *
  */
 
-public abstract class Conta implements Comparable<Conta>{
+public abstract class Conta implements Comparable<Conta>, Serializable {
     protected double saldo;
     private int agencia;
     private int numero;
